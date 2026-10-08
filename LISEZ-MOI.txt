@@ -1,0 +1,71 @@
+PORTFOLIO DE CAMILLE CHESNEAU
+=============================
+
+VOIR LE SITE
+Double-cliquez sur index.html : il s'ouvre dans votre navigateur.
+Une connexion internet est conseillée (polices et bibliothèques d'animation).
+
+LES PAGES
+- index.html ............ accueil (à propos, parcours, réalisations, compétences, contact)
+- passions.html ......... photos et vidéos de vos passions
+- Une page par catégorie de réalisations, chacune regroupe plusieurs projets :
+  videos.html, affiches-perso.html, affiches-ecole.html, motion-design.html,
+  packagings.html, site-internet.html
+
+LES EFFETS
+- Écran de chargement avec compteur : uniquement à la première visite
+  (pour le revoir, fermez l'onglet et rouvrez le site).
+- Défilement fluide sur tout le site.
+- Titres qui apparaissent lettre par lettre.
+- Cartes des réalisations : bulle liquide au survol de l'image (sur ordinateur).
+  ⚠ Cet effet a besoin que le site soit en ligne (Netlify, voir plus bas).
+  En double-cliquant sur index.html, on voit un simple zoom à la place.
+- Clic sur une carte : l'image s'agrandit et devient la couverture de la page.
+- Bande des outils : elle défile toute seule, accélère quand on fait défiler la page
+  et peut être attrapée et lancée à la souris (ou au doigt).
+- Affiches : inclinaison 3D au survol. Sites : la page défile dans le navigateur au survol.
+- Passions : galeries à faire glisser, vidéo qui passe en plein écran au défilement.
+- Bouton son (les petites barres dans le menu) : sons discrets, coupés par défaut.
+- Sur téléphone : menu plein écran, réalisations en carrousel.
+
+REMPLACER LES IMAGES (le plus simple)
+Chaque image provisoire indique son nom de fichier. Remplacez-la par la vôtre
+en gardant EXACTEMENT le même nom et le même dossier, en .jpg :
+- images/accueil/photo-camille.jpg ........ votre photo (format portrait)
+- images/videos/couverture.jpg ............ image de la catégorie (carte de l'accueil + haut de page)
+- images/videos/projet-1.jpg .............. aperçu de la vidéo 1 (etc.)
+- images/affiches-perso/projet-1-a.jpg .... affiches (format A4 / A3 en hauteur)
+- images/site-internet/projet-1-ordinateur.jpg et projet-1-mobile.jpg :
+  capture de la page ENTIÈRE du site (elle défile au survol)
+- images/passions/passion-1-1.jpg ......... passion 1, photo 1 (etc.)
+Conseil : des images de 1600 px de large maximum, pour que le site reste rapide.
+
+AJOUTER UN PROJET DANS UNE CATÉGORIE
+Dans la page de la catégorie, copiez tout un bloc <article> … </article>
+(un bloc = un projet) et changez le texte et les noms d'images.
+Le nombre de projets en haut de page se met à jour tout seul.
+Les explications propres à chaque page sont en commentaire juste au-dessus des projets.
+
+LA BANDE DES OUTILS (accueil)
+Les logos sont dans images/outils/. Pour ajouter un outil, copiez une ligne <li>
+dans index.html et mettez son logo (de préférence en .svg ou .png transparent).
+
+AJOUTER DES PHOTOS DANS UNE PASSION
+Dans passions.html, copiez une ligne <figure ...> d'une galerie et changez le
+nom du fichier. Formes possibles : class="tall" (portrait), "sq" (carré),
+"wide" (paysage). La galerie s'allonge toute seule.
+
+VIDÉOS
+Déposez vos .mp4 dans le dossier videos :
+- vidéos ........... videos/video-projet-1.mp4, video-projet-2.mp4…
+- motion design .... videos/motion-projet-1.mp4… (elles tournent en boucle, sans le son)
+- passions ......... videos/passion-video.mp4
+Tant qu'une vidéo manque, l'image d'aperçu s'affiche avec « Vidéo bientôt disponible ».
+Pour une vidéo lourde, mieux vaut la mettre sur YouTube (en "non répertoriée")
+et utiliser le code YouTube indiqué en commentaire dans passions.html.
+
+COULEURS ET POLICES
+Tout se règle en haut du fichier assets/css/style.css (section :root).
+
+METTRE EN LIGNE GRATUITEMENT
+Allez sur https://app.netlify.com/drop et glissez-déposez tout ce dossier.

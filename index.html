@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camille Chesneau · Communication et événementiel</title>
+<meta name="description" content="Portfolio de Camille Chesneau, étudiante en MBA communication et événementiel à l'ISEG Nantes.">
+<script>(function(h){h.classList.add('js','boot');try{var s=sessionStorage,v=s.getItem('cc-vt');if(!s.getItem('cc-visited'))h.classList.add('first');else if(v){h.classList.add('vt');h.style.setProperty('--vt-img','url("'+v+'")')}}catch(e){}setTimeout(function(){h.classList.add('loaded');h.classList.remove('boot','vt')},6000)})(document.documentElement);</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300..800&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-theme="marine">
+<div class="page-wipe" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span>Voir</span></div>
+<nav class="nav" aria-label="Navigation principale">
+  <a class="brand" href="index.html">C. Chesneau</a>
+  <ul>
+    <li><a href="index.html#apropos">À propos</a></li>
+    <li><a href="index.html#realisations">Réalisations</a></li>
+    <li><a href="passions.html">Passions</a></li>
+  </ul>
+  <a class="cta" href="index.html#contact">Contact</a>
+</nav>
+
+<main>
+  <!-- ACCUEIL : on zoome à travers le nom au scroll, une bulle liquide suit la souris et révèle une version inversée -->
+  <section class="intro" data-theme="marine">
+    <div class="intro-sticky">
+      <div class="scene">
+        <div class="halo" aria-hidden="true"></div>
+        <div class="scene-text">
+          <p class="hello">Hello ! Moi c'est</p>
+          <h1>Camille Chesneau</h1>
+          <p class="lead">Alternante en communication et événementiel</p>
+        </div>
+        <div class="portrait-wrap">
+          <!-- Votre photo : remplacez images/accueil/photo-camille.jpg (format portrait) -->
+          <figure class="portrait" data-cursor="Coucou"><img src="images/accueil/photo-camille.jpg" alt="Portrait de Camille Chesneau"></figure>
+        </div>
+      </div>
+      <!-- Écran d'entrée : on zoome à travers les lettres du nom pour découvrir la page -->
+      <div class="intro-cover" aria-hidden="true">
+        <svg class="cover-svg" xmlns="http://www.w3.org/2000/svg">
+          <defs><mask id="nameMask" maskUnits="userSpaceOnUse"><rect class="cover-rect" fill="#fff"/><g class="zoom"><text class="cover-text" fill="#000" text-anchor="middle">Camille Chesneau</text></g></mask></defs>
+          <rect class="cover-rect" fill="#0F1A4A" mask="url(#nameMask)"/>
+        </svg>
+        <span class="cover-kicker">Le portfolio de</span>
+        <div class="intro-hint"><i></i>Faites défiler pour entrer</div>
+      </div>
+      <div class="cover-reveal reveal-layer" aria-hidden="true">
+        <div class="fluid"></div>
+        <svg class="cover-svg" xmlns="http://www.w3.org/2000/svg"><g class="zoom"><text class="cover-text" fill="#F3F3FD" text-anchor="middle">Camille Chesneau</text></g></svg>
+        <span class="cover-kicker">Le portfolio de</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUI JE SUIS -->
+  <section class="wrap" id="apropos" data-theme="brume">
+    <h2 class="t-title" data-reveal>Qui <em>suis-je</em></h2>
+    <p class="about-text" data-words>J'ai 20 ans et je suis étudiante en MBA communication et événementiel à l'ISEG Nantes. En alternance au MEDEF Loire-Atlantique, je travaille au sein du pôle communication événementiel.</p>
+    <div class="facts">
+      <!-- Logos : version couleur sur fond clair, version blanche quand le fond devient bleu marine -->
+      <div class="fact" data-reveal>
+        <div class="logo"><img class="logo-color" src="images/logos/logo-medef-couleur.png" alt="Logo du MEDEF Loire-Atlantique"><img class="logo-white" src="images/logos/logo-medef.png" alt=""></div>
+        <p>Alternante au pôle communication événementiel.</p>
+      </div>
+      <div class="facts-sep" aria-hidden="true"></div>
+      <div class="fact" data-reveal style="--d:.12s">
+        <div class="logo"><img class="logo-color" src="images/logos/logo-iseg-couleur.png" alt="Logo de l'ISEG"><img class="logo-white" src="images/logos/logo-iseg.png" alt=""></div>
+        <p>MBA communication et événementiel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCOURS : la frise se remplit au scroll -->
+  <section class="wrap" id="parcours" data-theme="marine">
+    <h2 class="t-title" data-reveal>Mon <em>parcours</em></h2>
+    <div class="timeline">
+      <div class="timeline-line"></div><div class="timeline-fill"></div>
+      <div class="step" data-reveal><p class="when">Depuis 2026</p><h3>Alternance au MEDEF <span class="nowrap">Loire-Atlantique</span></h3>
+        <p>Pôle communication et événementiel :</p>
+        <ul>
+          <li>Je travaille en collaboration avec les chargés de communication et d'événements, en étant pleinement intégrée à l'équipe.</li>
+          <li>Je réalise des contenus pour différents supports (réseaux sociaux, emails, plaquettes, site internet).</li>
+          <li>Je capture des photos et vidéos et crée des visuels.</li>
+          <li>Je participe à la conception et à l'organisation des événements.</li>
+        </ul>
+      </div>
+      <div class="step" data-reveal><p class="when">Depuis 2026</p><h3>MBA communication et événementiel, ISEG Nantes</h3></div>
+      <div class="step" data-reveal><p class="when">2023 à 2026</p><h3>Bachelor en communication, marketing et événementiel, ISEG Nantes</h3><p>Majeure création.</p></div>
+      <div class="step" data-reveal><p class="when">2023</p><h3>Bac STMG à Saint-Dominique</h3><p>Option marketing.</p></div>
+    </div>
+  </section>
+
+  <!-- RÉALISATIONS : défilement horizontal -->
+  <section class="hscroll" id="realisations" data-theme="pervenche">
+    <div class="hscroll-sticky">
+      <div class="hscroll-head">
+        <h2 class="t-title">Mes <em>réalisations</em></h2>
+        <p class="counter" aria-live="polite"><span data-count>1</span> sur <span data-total>6</span></p>
+      </div>
+      <div class="track">
+        <a class="card" href="videos.html" data-cursor="Voir">
+          <div class="media"><img src="images/videos/couverture.jpg" alt="Vidéos" loading="lazy"></div>
+          <div class="meta"><h3>Vidéos</h3><p>Tournage et montage</p></div>
+        </a>
+        <a class="card" href="affiches-perso.html" data-cursor="Voir">
+          <div class="media"><img src="images/affiches-perso/couverture.jpg" alt="Affiches perso" loading="lazy"></div>
+          <div class="meta"><h3>Affiches perso</h3><p>Création libre</p></div>
+        </a>
+        <a class="card" href="affiches-ecole.html" data-cursor="Voir">
+          <div class="media"><img src="images/affiches-ecole/couverture.jpg" alt="Affiches école" loading="lazy"></div>
+          <div class="meta"><h3>Affiches école</h3><p>Projets ISEG</p></div>
+        </a>
+        <a class="card" href="motion-design.html" data-cursor="Voir">
+          <div class="media"><img src="images/motion-design/couverture.gif" alt="Motion design" loading="lazy"></div>
+          <div class="meta"><h3>Motion design</h3><p>Animation</p></div>
+        </a>
+        <a class="card" href="packagings.html" data-cursor="Voir">
+          <div class="media"><img src="images/packagings/couverture.jpg" alt="Packagings" loading="lazy"></div>
+          <div class="meta"><h3>Packagings</h3><p>Design produit</p></div>
+        </a>
+        <a class="card" href="site-internet.html" data-cursor="Voir">
+          <div class="media"><img src="images/site-internet/couverture.jpg" alt="Site internet" loading="lazy"></div>
+          <div class="meta"><h3>Site internet</h3><p>Web design</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section class="wrap" id="competences" data-theme="brume">
+    <h2 class="t-title" data-reveal>Mes <em>compétences</em></h2>
+    <div class="skills-list">
+      <div class="skill" data-reveal><h3>Organisation d'événements</h3><p>Rétroplanning, budget, prestataires, logistique et accueil des participants, de l'idée au jour J.</p></div>
+      <div class="skill" data-reveal><h3>Réseaux sociaux</h3><p>Ligne éditoriale, calendrier de publication, création de contenus et suivi des statistiques.</p></div>
+      <div class="skill" data-reveal><h3>Rédaction</h3><p>Posts, newsletters, communiqués et invitations, avec le bon ton pour chaque public.</p></div>
+      <div class="skill" data-reveal><h3>Création visuelle</h3><p>Affiches, visuels pour les réseaux, kakémonos et supports print.</p></div>
+      <div class="skill" data-reveal><h3>Relations et partenariats</h3><p>Échanges avec les adhérents, intervenants, partenaires et prestataires.</p></div>
+    </div>
+    <!-- Bande des outils : elle se bloque à l'écran pendant qu'on fait défiler (comme les réalisations),
+         défile en continu et se fait glisser à la souris.
+         Pour ajouter un outil : copiez une ligne <li> et mettez son logo dans images/outils/ -->
+    <div class="marquee-pin">
+      <div class="marquee-sticky">
+        <h3 class="t-title marquee-label">Mes outils <em>du quotidien</em></h3>
+        <div class="marquee-stage">
+          <div class="marquee-ribbon" aria-hidden="true"></div>
+          <div class="marquee" data-cursor="Glisser">
+            <ul class="marquee-track" aria-label="Mes outils">
+              <li class="tool"><img src="images/outils/canva.svg" alt="Canva" draggable="false"></li>
+              <li class="tool"><img src="images/outils/adobe.svg" alt="Suite Adobe" draggable="false"></li>
+              <li class="tool"><img src="images/outils/wordpress.svg" alt="WordPress" class="on-dark" draggable="false"></li>
+              <li class="tool"><img src="images/outils/final-cut-pro.png" alt="Final Cut Pro" draggable="false"></li>
+              <li class="tool"><img src="images/outils/capcut.svg" alt="CapCut" draggable="false"></li>
+              <li class="tool"><img src="images/outils/chatgpt.svg" alt="ChatGPT" draggable="false"></li>
+              <li class="tool"><img src="images/outils/notion.svg" alt="Notion" draggable="false"></li>
+              <li class="tool"><img src="images/outils/linkedin.svg" alt="LinkedIn" draggable="false"></li>
+              <li class="tool"><img src="images/outils/office.svg" alt="Pack Office" draggable="false"></li>
+              <li class="tool"><img src="images/outils/claude.svg" alt="Claude" draggable="false"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APERÇU PASSIONS -->
+  <section class="wrap teaser" data-theme="marine">
+    <div data-reveal>
+      <h2 class="t-title">Ce qui <em>m'anime</em></h2>
+      <p class="lead" style="margin-top:1.5rem;color:var(--muted)">Et si on parlait un peu moins travail ? Photos, vidéos, souvenirs : découvrez mes passions !</p>
+      <a class="btn" href="passions.html" data-cursor="Entrer">Découvrir mes passions →</a>
+    </div>
+    <div class="teaser-pics" aria-hidden="true">
+      <figure class="p1" data-parallax=".08"><img src="images/passions/passion-1-1.jpg" alt="" loading="lazy"></figure>
+      <figure class="p2" data-parallax="-.12"><img src="images/passions/passion-2-2.jpg" alt="" loading="lazy"></figure>
+      <figure class="p3" data-parallax=".18"><img src="images/passions/passion-3-3.jpg" alt="" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="wrap contact" id="contact" data-theme="lavande">
+    <h2 class="t-big" data-reveal>On se <em>rencontre</em> ?</h2>
+    <div class="contact-row">
+      <a class="mail magnetic" href="mailto:votre.email@exemple.fr" data-cursor="Écrire">M'écrire</a>
+      <ul class="contact-links">
+        <li><span>Email</span><a href="mailto:votre.email@exemple.fr">votre.email@exemple.fr</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener">Camille Chesneau</a></li>
+        <li><span>Basée à</span>Nantes, <span class="nowrap">Loire-Atlantique</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer class="foot"><span>© 2026 Camille Chesneau</span><a href="index.html#contact">Me contacter</a></footer>
+<!-- Bibliothèques d'animation (Lenis, GSAP, SplitText) : si elles ne chargent pas, le site marche quand même -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# Fichiers système et réglages locaux, à ne pas mettre en ligne
+.DS_Store
+.claude/
+*.swp

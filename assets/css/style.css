@@ -397,7 +397,12 @@ body[data-theme="marine"] .fact .logo-white{opacity:1}
 .proj-head{position:sticky;top:7rem;align-self:start}
 .proj-n{font-family:var(--f-serif);font-style:italic;font-size:1.5rem;color:var(--accent)}
 .proj-title{font-family:var(--f-title);font-weight:700;font-size:clamp(1.8rem,3.4vw,3.1rem);line-height:1.04;letter-spacing:-.035em;margin:.25rem 0 1.1rem}
-.proj-text{color:var(--muted);max-width:44ch}
+.proj-text{color:var(--muted);max-width:44ch;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+/* textes en plusieurs paragraphes ou avec une liste (ex. projet Lacoste, restaurant) */
+.proj-text > * + *{margin-top:.85em}
+.proj-text strong{color:var(--fg);font-weight:600}
+.proj-text ul{padding-left:1.1rem;display:grid;gap:.45rem}
+.proj-text li::marker{color:var(--rose)}
 .proj-meta{display:grid;gap:.7rem;margin-top:1.8rem;padding-top:1.3rem;border-top:1px solid color-mix(in srgb,var(--fg) 16%,transparent);max-width:30rem}
 .proj-meta div{display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem}
 .proj-meta dt{font-size:.9rem;color:var(--muted)}
@@ -478,7 +483,7 @@ body[data-theme="marine"] .fact .logo-white{opacity:1}
 /* ========== PAGE PASSIONS ========== */
 .passion{padding:clamp(5rem,12vh,8rem) var(--pad)}
 .passion-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem 4rem;align-items:end;margin-bottom:3rem}
-.passion-head > p{color:var(--muted);max-width:46ch}
+.passion-head > p{color:var(--muted);max-width:46ch;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 /* Sommaire en haut de la page */
 .p-index{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.5rem}
 .p-index a{display:inline-flex;align-items:baseline;gap:.5rem;padding:.55rem 1.1rem;border-radius:999px;border:1px solid color-mix(in srgb,var(--fg) 30%,transparent);text-decoration:none;transition:background-color .3s,color .3s}

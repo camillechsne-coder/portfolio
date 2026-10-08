@@ -805,19 +805,79 @@ void main(){
   /* ---------- 14. Pages catégories ---------- */
   // nombre de projets affiché en haut de page
   $$('[data-proj-count]').forEach(el => { el.textContent = $$('.proj').length; });
-  // lecteur vidéo : l'image d'aperçu, puis lecture avec le son au clic
-  const playerIO = new IntersectionObserver(entries => entries.forEach(e => { if (!e.isIntersecting) $('video', e.target).pause(); }), { threshold: .2 });
-  $$('.player').forEach(p => {
-    const v = $('video', p), btn = $('.play', p);
+  // lecteur vidéo : lecture automatique (sans le son, règle des navigateurs) quand la vidéo est à l'écran,
+  // pause dès qu'on passe à une autre ; boutons « son » et « plein écran »
+  const players = $$('.player');
+  const playerIO = new IntersectionObserver(entries => entries.forEach(e => {
+    const v = $('video', e.target);
+    if (e.isIntersecting) {
+      players.forEach(o => { if (o !== e.target) $('video', o).pause(); });
+      const pr = v.play(); if (pr) pr.catch(() => {});
+    } else v.pause();
+  }), { threshold: .6 });
+  players.forEach(p => {
+    const v = $('video', p), snd = $('.pl-sound', p), full = $('.pl-full', p);
+    if (!snd) return;
     v.addEventListener('error', () => p.classList.add('missing'), true);
-    const start = () => {
-      if (p.classList.contains('playing')) return;
-      $$('.player video').forEach(o => { if (o !== v) o.pause(); });
-      p.classList.add('playing'); v.controls = true;
-      const pr = v.play(); if (pr) pr.catch(() => { p.classList.remove('playing'); v.controls = false; });
+    const syncSound = () => {
+      snd.setAttribute('aria-pressed', !v.muted);
+      $('.pl-txt', snd).textContent = v.muted ? 'Activer le son' : 'Couper le son';
+      p.classList.toggle('sound-on', !v.muted);
     };
-    btn.addEventListener('click', e => { e.stopPropagation(); start(); });
-    p.addEventListener('click', start);
+    const toggleSound = () => {
+      v.muted = !v.muted;
+      if (!v.muted) players.forEach(o => { if (o !== p) { const ov = $('video', o); ov.muted = true; o.classList.remove('sound-on'); } });
+      syncSound();
+      const pr = v.play(); if (pr) pr.catch(() => {});
+    };
+    snd.addEventListener('click', e => { e.stopPropagation(); toggleSound(); });
+    v.addEventListener('click', toggleSound);   // un clic sur la vidéo active ou coupe le son
+    v.addEventListener('volumechange', syncSound);
+    full.addEventListener('click', e => {
+      e.stopPropagation();
+      if (v.requestFullscreen) v.requestFullscreen().catch(() => {});
+      else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+      else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();   // iPhone
+      const pr = v.play(); if (pr) pr.catch(() => {});
+    });
+    // en plein écran : les commandes habituelles (pause, avance, volume) apparaissent
+    const onFs = () => { const fs = (document.fullscreenElement || document.webkitFullscreenElement) === v; v.controls = fs; };
+    document.addEventListener('fullscreenchange', onFs);
+    document.addEventListener('webkitfullscreenchange', onFs);
+    v.addEventListener('webkitendfullscreen', () => { v.controls = false; });
+    // barre de temps : lecture/pause, minutage et curseur pour avancer ou reculer
+    const playBtn = $('.pl-play', p), seek = $('.pl-seek', p), tCur = $('.pl-time', p), tDur = $('.pl-dur', p);
+    if (seek) {
+      const fmt = t => { t = Math.max(0, Math.floor(t || 0)); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
+      let dragging = false, raf = 0;
+      const paint = () => {
+        const d = v.duration;
+        if (d && isFinite(d)) {
+          if (!dragging) seek.value = Math.round(v.currentTime / d * 1000);
+          tCur.textContent = fmt(dragging ? seek.value / 1000 * d : v.currentTime);
+          tDur.textContent = fmt(d);
+        }
+        seek.style.setProperty('--p', seek.value / 10 + '%');
+      };
+      const loop = () => { paint(); raf = v.paused ? 0 : requestAnimationFrame(loop); };
+      v.addEventListener('loadedmetadata', paint);
+      v.addEventListener('timeupdate', paint);
+      v.addEventListener('play', () => { p.classList.add('is-playing'); playBtn.setAttribute('aria-label', 'Mettre en pause'); if (!raf) raf = requestAnimationFrame(loop); });
+      v.addEventListener('pause', () => { p.classList.remove('is-playing'); playBtn.setAttribute('aria-label', 'Lire la vidéo'); });
+      const jump = () => { const d = v.duration; if (d && isFinite(d)) v.currentTime = seek.value / 1000 * d; paint(); };
+      seek.addEventListener('pointerdown', () => { dragging = true; });
+      seek.addEventListener('input', () => { dragging = true; jump(); });
+      seek.addEventListener('change', () => { dragging = false; jump(); });
+      seek.addEventListener('pointerup', () => { dragging = false; });
+      if (!v.duration) { v.preload = 'metadata'; }   // pour connaître la durée avant la lecture
+      playBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        if (v.paused) { players.forEach(o => { if (o !== p) $('video', o).pause(); }); const pr = v.play(); if (pr) pr.catch(() => {}); }
+        else v.pause();
+      });
+      paint();
+    }
+    syncSound();
     playerIO.observe(p);
   });
   // motion design : un clic active ou coupe le son de l'animation
@@ -831,7 +891,7 @@ void main(){
   });
   // affiches : inclinaison 3D et reflet qui suivent la souris
   if (fine && !reduce) {
-    $$('.poster').forEach(el => {
+    $$('.poster, .gal-item').forEach(el => {
       el.addEventListener('mousemove', e => {
         const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
         el.classList.add('tilting');

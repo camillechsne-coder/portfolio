@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vidéos · Camille Chesneau</title>
-<meta name="description" content="Vidéos : les réalisations de Camille Chesneau en tournage et montage.">
+<title>Montage · Camille Chesneau</title>
+<meta name="description" content="Montage : les réalisations vidéo de Camille Chesneau, tournage et montage.">
 <script>(function(h){h.classList.add('js','boot');try{var s=sessionStorage,v=s.getItem('cc-vt');if(!s.getItem('cc-visited'))h.classList.add('first');else if(v){h.classList.add('vt');h.style.setProperty('--vt-img','url("'+v+'")')}}catch(e){}setTimeout(function(){h.classList.add('loaded');h.classList.remove('boot','vt')},6000)})(document.documentElement);</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,13 +30,13 @@
   <section class="p-hero" data-theme="marine">
     <a class="back" href="index.html#realisations">← Toutes les réalisations</a>
     <p class="cat" data-reveal>Réalisations · 01 / 06</p>
-    <h1>Vidéos</h1>
+    <h1>Montage</h1>
     <div class="p-sum" data-reveal style="--d:.2s">
       <p class="p-intro">Tournage, montage et contenus vidéo pour les réseaux sociaux.</p>
       <p class="p-count"><span data-proj-count>0</span> projets</p>
     </div>
     <ul class="p-index cat-nav" aria-label="Catégories de réalisations" data-reveal style="--d:.3s">
-      <li><a href="videos.html" aria-current="page">Vidéos</a></li>
+      <li><a href="videos.html" aria-current="page">Montage</a></li>
       <li><a href="affiches-perso.html">Affiches perso</a></li>
       <li><a href="affiches-ecole.html">Affiches école</a></li>
       <li><a href="motion-design.html">Motion design</a></li>
@@ -46,15 +46,16 @@
   </section>
 
   <!-- Image principale : remplacez images/videos/couverture.jpg (c'est aussi l'image de la carte sur l'accueil) -->
-  <figure class="cover" data-cover><img src="images/videos/couverture.jpg" alt="Vidéos, aperçu des réalisations"></figure>
+  <figure class="cover" data-cover><img src="images/videos/couverture.jpg" alt="Montage, aperçu des réalisations"></figure>
 
   <!-- PROJETS
        Pour ajouter un projet : copiez tout un bloc <article> … </article> et changez le numéro.
        Déposez vos vidéos dans le dossier videos : video-projet-1.mp4, video-projet-2.mp4…
-       L'image affichée avant la lecture : images/videos/projet-1.jpg (etc.).
+       Elles se lancent toutes seules (sans le son) quand on arrive dessus et s'arrêtent quand on passe à la suivante.
+       L'image affichée pendant le chargement : images/videos/projet-1.jpg (etc.).
        Format : class="player wide" (paysage 16:9) ou "player tall" (vertical, réels et stories). -->
   <section class="projects">
-    <article class="proj" id="projet-1" data-theme="brume">
+    <article class="proj stack boxed" id="projet-1" data-theme="brume">
       <div class="proj-head">
         <p class="proj-n">01</p>
         <h2 class="proj-title">Assemblée générale</h2>
@@ -65,14 +66,18 @@
         </dl>
       </div>
       <div class="proj-media">
-        <figure class="player wide" data-cursor="Lecture">
-          <video src="videos/video-projet-1.mp4" poster="images/videos/projet-1.jpg" preload="none" playsinline></video>
-          <button class="play" type="button" aria-label="Lire la vidéo : Assemblée générale"><span></span></button>
+        <figure class="player wide">
+          <video src="videos/video-projet-1.mp4" poster="images/videos/projet-1.jpg" muted loop playsinline preload="none" aria-label="Vidéo : Assemblée générale"></video>
+          <div class="player-ui">
+            <div class="pl-bar"><button class="pl-play" type="button" aria-label="Mettre en pause"><span class="pl-pp" aria-hidden="true"></span></button><span class="pl-time">0:00</span><input class="pl-seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Avancer ou reculer dans la vidéo"><span class="pl-dur">0:00</span></div>
+            <button class="pl-sound" type="button" aria-pressed="false"><span class="pl-ico" aria-hidden="true"></span><span class="pl-txt">Activer le son</span></button>
+            <button class="pl-full" type="button" aria-label="Voir en plein écran"><span aria-hidden="true">⤢</span></button>
+          </div>
         </figure>
       </div>
     </article>
 
-    <article class="proj" id="projet-2" data-theme="lavande">
+    <article class="proj stack boxed" id="projet-2" data-theme="lavande">
       <div class="proj-head">
         <p class="proj-n">02</p>
         <h2 class="proj-title">Trophées sportifs</h2>
@@ -83,14 +88,18 @@
         </dl>
       </div>
       <div class="proj-media">
-        <figure class="player tall" data-cursor="Lecture">
-          <video src="videos/video-projet-2.mp4" poster="images/videos/projet-2.jpg" preload="none" playsinline></video>
-          <button class="play" type="button" aria-label="Lire la vidéo : Trophées sportifs"><span></span></button>
+        <figure class="player wide">
+          <video src="videos/video-projet-2.mp4" poster="images/videos/projet-2.jpg" muted loop playsinline preload="none" aria-label="Vidéo : Trophées sportifs"></video>
+          <div class="player-ui">
+            <div class="pl-bar"><button class="pl-play" type="button" aria-label="Mettre en pause"><span class="pl-pp" aria-hidden="true"></span></button><span class="pl-time">0:00</span><input class="pl-seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Avancer ou reculer dans la vidéo"><span class="pl-dur">0:00</span></div>
+            <button class="pl-sound" type="button" aria-pressed="false"><span class="pl-ico" aria-hidden="true"></span><span class="pl-txt">Activer le son</span></button>
+            <button class="pl-full" type="button" aria-label="Voir en plein écran"><span aria-hidden="true">⤢</span></button>
+          </div>
         </figure>
       </div>
     </article>
 
-    <article class="proj" id="projet-3" data-theme="brume">
+    <article class="proj stack boxed" id="projet-3" data-theme="brume">
       <div class="proj-head">
         <p class="proj-n">03</p>
         <h2 class="proj-title">Vidéo Dixneuf</h2>
@@ -101,9 +110,13 @@
         </dl>
       </div>
       <div class="proj-media">
-        <figure class="player tall" data-cursor="Lecture">
-          <video src="videos/video-projet-3.mp4" poster="images/videos/projet-3.jpg" preload="none" playsinline></video>
-          <button class="play" type="button" aria-label="Lire la vidéo : Vidéo Dixneuf"><span></span></button>
+        <figure class="player tall">
+          <video src="videos/video-projet-3.mp4" poster="images/videos/projet-3.jpg" muted loop playsinline preload="none" aria-label="Vidéo : Vidéo Dixneuf"></video>
+          <div class="player-ui">
+            <div class="pl-bar"><button class="pl-play" type="button" aria-label="Mettre en pause"><span class="pl-pp" aria-hidden="true"></span></button><span class="pl-time">0:00</span><input class="pl-seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Avancer ou reculer dans la vidéo"><span class="pl-dur">0:00</span></div>
+            <button class="pl-sound" type="button" aria-pressed="false"><span class="pl-ico" aria-hidden="true"></span><span class="pl-txt">Activer le son</span></button>
+            <button class="pl-full" type="button" aria-label="Voir en plein écran"><span aria-hidden="true">⤢</span></button>
+          </div>
         </figure>
       </div>
     </article>

@@ -36,7 +36,7 @@
       <p class="p-count"><span data-proj-count>0</span> projets</p>
     </div>
     <ul class="p-index cat-nav" aria-label="Catégories de réalisations" data-reveal style="--d:.3s">
-      <li><a href="videos.html">Vidéos</a></li>
+      <li><a href="videos.html">Montage</a></li>
       <li><a href="affiches-perso.html">Affiches perso</a></li>
       <li><a href="affiches-ecole.html" aria-current="page">Affiches école</a></li>
       <li><a href="motion-design.html">Motion design</a></li>
@@ -50,11 +50,12 @@
 
   <!-- PROJETS
        Pour ajouter un projet : copiez tout un bloc <article> … </article> et changez le numéro.
-       Une affiche = une ligne <figure class="poster">. Mettez-en autant que vous voulez par projet.
-       Indiquez la taille de l'image (width et height, en pixels) : l'affiche garde ainsi son format.
-       Pour une affiche seule, gardez class="posters solo". -->
+       Une image = une ligne <figure class="gal-item">.
+       - dans une <div class="gal-row"> : les images de la rangée ont la même hauteur (format dans style="--r: largeur / hauteur") ;
+       - dans une <div class="gal-grid two"> : 2 images par ligne ; "gal-grid three" : 3 par ligne, les dernières centrées.
+       -->
   <section class="projects">
-    <article class="proj" id="projet-1" data-theme="brume">
+    <article class="proj stack boxed" id="projet-1" data-theme="brume">
       <div class="proj-head">
         <p class="proj-n">01</p>
         <h2 class="proj-title">Projet Lacoste</h2>
@@ -68,15 +69,24 @@
         </dl>
       </div>
       <div class="proj-media">
-        <div class="posters" data-lightbox>
-          <figure class="poster"><img src="images/affiches-ecole/projet-1-a.jpg" alt="Projet Lacoste, affiche A" width="1131" height="1600" loading="lazy"></figure>
-          <figure class="poster"><img src="images/affiches-ecole/projet-1-b.jpg" alt="Projet Lacoste, affiche B" width="1131" height="1600" loading="lazy"></figure>
-          <figure class="poster"><img src="images/affiches-ecole/projet-1-c.jpg" alt="Projet Lacoste, affiche C" width="1131" height="1600" loading="lazy"></figure>
+        <div class="gal" data-lightbox>
+          <div class="gal-row">
+            <figure class="gal-item" style="--r:1.7738"><span class="gal-media"><img src="images/affiches-ecole/lacoste-mockup-1.jpg" alt="Projet Lacoste, mockup d’affichage" width="1600" height="902" loading="lazy"></span></figure>
+          </div>
+          <div class="gal-row">
+            <figure class="gal-item" style="--r:1.7778"><span class="gal-media"><img src="images/affiches-ecole/lacoste-mockup-2.jpg" alt="Projet Lacoste, mockup de l’émission sur Canal+" width="1600" height="900" loading="lazy"></span></figure>
+          </div>
+          <div class="gal-grid two" style="max-width:960px">
+            <figure class="gal-item is-poster" style="--r:0.7064"><span class="gal-media"><img src="images/affiches-ecole/lacoste-1.jpg" alt="Projet Lacoste, déclinaison d’affiche 1" width="989" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.7064"><span class="gal-media"><img src="images/affiches-ecole/lacoste-2.jpg" alt="Projet Lacoste, déclinaison d’affiche 2" width="989" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.7064"><span class="gal-media"><img src="images/affiches-ecole/lacoste-3.jpg" alt="Projet Lacoste, déclinaison d’affiche 3" width="989" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.7064"><span class="gal-media"><img src="images/affiches-ecole/lacoste-4.jpg" alt="Projet Lacoste, déclinaison d’affiche 4" width="989" height="1400" loading="lazy"></span></figure>
+          </div>
         </div>
       </div>
     </article>
 
-    <article class="proj" id="projet-2" data-theme="lavande">
+    <article class="proj stack boxed" id="projet-2" data-theme="lavande">
       <div class="proj-head">
         <p class="proj-n">02</p>
         <h2 class="proj-title">Affiche Les Ardentes</h2>
@@ -87,13 +97,16 @@
         </dl>
       </div>
       <div class="proj-media">
-        <div class="posters solo" data-lightbox>
-          <figure class="poster"><img src="images/affiches-ecole/projet-2.jpg" alt="Affiche typographique du festival Les Ardentes" width="1131" height="1600" loading="lazy"></figure>
+        <div class="gal" data-lightbox>
+          <div class="gal-row">
+            <figure class="gal-item is-poster" style="--r:0.6164"><span class="gal-media"><img src="images/affiches-ecole/ardentes-affiche.jpg" alt="Affiche typographique du festival Les Ardentes" width="863" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item" style="--r:1.3333"><span class="gal-media"><img src="images/affiches-ecole/ardentes-mockup.jpg" alt="Affiche Les Ardentes en situation (mockup)" width="1600" height="1200" loading="lazy"></span></figure>
+          </div>
         </div>
       </div>
     </article>
 
-    <article class="proj" id="projet-3" data-theme="brume">
+    <article class="proj stack boxed" id="projet-3" data-theme="brume">
       <div class="proj-head">
         <p class="proj-n">03</p>
         <h2 class="proj-title">Ouverture d’un restaurant</h2>
@@ -110,9 +123,109 @@
         </dl>
       </div>
       <div class="proj-media">
-        <div class="posters" data-lightbox>
-          <figure class="poster"><img src="images/affiches-ecole/projet-3-a.jpg" alt="Ouverture d’un restaurant, affiche A" width="1131" height="1600" loading="lazy"></figure>
-          <figure class="poster"><img src="images/affiches-ecole/projet-3-b.jpg" alt="Ouverture d’un restaurant, affiche B" width="1131" height="1600" loading="lazy"></figure>
+        <div class="gal" data-lightbox>
+          <div class="gal-row">
+            <figure class="gal-item" style="--r:1.2"><span class="gal-media"><img src="images/affiches-ecole/restaurant-logo.jpg" alt="Logo du restaurant sur l’enseigne" width="1296" height="1080" loading="lazy"></span><figcaption class="gal-cap">Logo du restaurant</figcaption></figure>
+            <figure class="gal-item is-poster" style="--r:0.7064"><span class="gal-media"><img src="images/affiches-ecole/restaurant-affiche.jpg" alt="Affiche d’ouverture du restaurant" width="989" height="1400" loading="lazy"></span><figcaption class="gal-cap">Affiche d’ouverture du restaurant</figcaption></figure>
+          </div>
+          <div class="gal-row" style="max-width:760px">
+            <figure class="gal-item is-poster" style="--r:0.7071"><span class="gal-media"><img src="images/affiches-ecole/restaurant-flyer-ouverture-recto.jpg" alt="Flyer d’ouverture, recto" width="990" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.7071"><span class="gal-media"><img src="images/affiches-ecole/restaurant-flyer-ouverture-verso.jpg" alt="Flyer d’ouverture, verso" width="990" height="1400" loading="lazy"></span></figure>
+          </div>
+          <p class="gal-cap gal-cap--row" style="max-width:760px"><span class="gal-arrow" aria-hidden="true">↖</span><span>Flyers recto verso pour annoncer l’ouverture du restaurant</span><span class="gal-arrow" aria-hidden="true">↗</span></p>
+          <div class="gal-row" style="max-width:760px">
+            <figure class="gal-item is-poster" style="--r:0.7071"><span class="gal-media"><img src="images/affiches-ecole/restaurant-flyer-lancement-recto.jpg" alt="Flyer de la soirée de lancement, recto (côté bleu)" width="990" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.7071"><span class="gal-media"><img src="images/affiches-ecole/restaurant-flyer-lancement-verso.jpg" alt="Flyer de la soirée de lancement, verso (côté orange)" width="990" height="1400" loading="lazy"></span></figure>
+          </div>
+          <p class="gal-cap gal-cap--row" style="max-width:760px"><span class="gal-arrow" aria-hidden="true">↖</span><span>Flyers pour annoncer la soirée de lancement du restaurant : le côté bleu est le recto, le côté orange le verso</span><span class="gal-arrow" aria-hidden="true">↗</span></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj stack boxed" id="projet-4" data-theme="lavande">
+      <div class="proj-head">
+        <p class="proj-n">04</p>
+        <h2 class="proj-title">Affiches Keep It Clean</h2>
+        <p class="proj-text">Réalisation d’une déclinaison d’affiches pour la campagne « Keep It Clean ». Mes affiches font partie de celles qui ont été sélectionnées pour être possiblement affichées dans l’école.</p>
+        <dl class="proj-meta">
+          <div><dt>Contexte</dt><dd>Projet, ISEG Nantes</dd></div>
+          <div><dt>Outils</dt><dd class="proj-tools"><img src="images/outils/canva.svg" alt="Canva" title="Canva" width="30" height="30"></dd></div>
+        </dl>
+      </div>
+      <div class="proj-media">
+        <div class="gal" data-lightbox>
+          <div class="gal-row">
+            <figure class="gal-item" style="--r:1.5009"><span class="gal-media"><img src="images/affiches-ecole/keepitclean-mockup.jpg" alt="Affiches Keep It Clean en situation (mockup)" width="1600" height="1066" loading="lazy"></span></figure>
+          </div>
+          <div class="gal-grid two" style="max-width:960px">
+            <figure class="gal-item is-poster" style="--r:0.7064"><span class="gal-media"><img src="images/affiches-ecole/keepitclean-1.jpg" alt="Affiche Keep It Clean 1" width="989" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.7064"><span class="gal-media"><img src="images/affiches-ecole/keepitclean-2.jpg" alt="Affiche Keep It Clean 2" width="989" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.7064"><span class="gal-media"><img src="images/affiches-ecole/keepitclean-3.jpg" alt="Affiche Keep It Clean 3" width="989" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.7064"><span class="gal-media"><img src="images/affiches-ecole/keepitclean-4.jpg" alt="Affiche Keep It Clean 4" width="989" height="1400" loading="lazy"></span></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj stack boxed" id="projet-5" data-theme="brume">
+      <div class="proj-head">
+        <p class="proj-n">05</p>
+        <h2 class="proj-title">Affiche portes ouvertes</h2>
+        <p class="proj-text">Réalisation d’une affiche graphique pour les portes ouvertes 2026 de notre école.</p>
+        <dl class="proj-meta">
+          <div><dt>Contexte</dt><dd>Projet fictif, ISEG Nantes</dd></div>
+          <div><dt>Outils</dt><dd class="proj-tools"><img src="images/outils/illustrator.svg" alt="Illustrator" title="Illustrator" width="30" height="30"><img src="images/outils/photoshop.svg" alt="Photoshop" title="Photoshop" width="30" height="30"></dd></div>
+        </dl>
+      </div>
+      <div class="proj-media">
+        <div class="gal" data-lightbox>
+          <div class="gal-row">
+            <figure class="gal-item is-poster" style="--r:0.7071"><span class="gal-media"><img src="images/affiches-ecole/portes-ouvertes-affiche.jpg" alt="Affiche des portes ouvertes 2026" width="990" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item" style="--r:1.5009"><span class="gal-media"><img src="images/affiches-ecole/portes-ouvertes-mockup.jpg" alt="Affiches des portes ouvertes en situation (mockup)" width="1600" height="1066" loading="lazy"></span></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj stack boxed" id="projet-6" data-theme="lavande">
+      <div class="proj-head">
+        <p class="proj-n">06</p>
+        <h2 class="proj-title">Affiches Home Exchange</h2>
+        <p class="proj-text">Réalisation d’affiches lors d’un workshop avec mon école pour la marque Home Exchange.</p>
+        <dl class="proj-meta">
+          <div><dt>Contexte</dt><dd>Workshop, ISEG Nantes</dd></div>
+          <div><dt>Outils</dt><dd class="proj-tools"><img src="images/outils/canva.svg" alt="Canva" title="Canva" width="30" height="30"></dd></div>
+        </dl>
+      </div>
+      <div class="proj-media">
+        <div class="gal" data-lightbox>
+          <div class="gal-grid three">
+            <figure class="gal-item" style="--r:0.75"><span class="gal-media"><img src="images/affiches-ecole/homeexchange-mockup.jpg" alt="Affiche Home Exchange en situation dans une gare (mockup)" width="960" height="1280" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.75"><span class="gal-media"><img src="images/affiches-ecole/homeexchange-1.jpg" alt="Affiche Home Exchange 1" width="1050" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.75"><span class="gal-media"><img src="images/affiches-ecole/homeexchange-2.jpg" alt="Affiche Home Exchange 2" width="1050" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.75"><span class="gal-media"><img src="images/affiches-ecole/homeexchange-3.jpg" alt="Affiche Home Exchange 3" width="1050" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item is-poster" style="--r:0.75"><span class="gal-media"><img src="images/affiches-ecole/homeexchange-4.jpg" alt="Affiche Home Exchange 4" width="1050" height="1400" loading="lazy"></span></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj stack boxed" id="projet-7" data-theme="brume">
+      <div class="proj-head">
+        <p class="proj-n">07</p>
+        <h2 class="proj-title">Projet Kappa</h2>
+        <p class="proj-text">Réalisation de l’affiche d’un live Twitch fictif pour la marque Kappa. Le brief : quels sont les leviers marketing pour faire émerger Kappa dans l’univers lifestyle/streetwear auprès de la Gen Z en France ?</p>
+        <dl class="proj-meta">
+          <div><dt>Contexte</dt><dd>Workshop, ISEG Nantes</dd></div>
+          <div><dt>Outils</dt><dd class="proj-tools"><img src="images/outils/photoshop.svg" alt="Photoshop" title="Photoshop" width="30" height="30"></dd></div>
+        </dl>
+      </div>
+      <div class="proj-media">
+        <div class="gal" data-lightbox>
+          <div class="gal-row" style="max-width:960px">
+            <figure class="gal-item is-poster" style="--r:0.7071"><span class="gal-media"><img src="images/affiches-ecole/kappa-affiche.jpg" alt="Affiche du live Twitch Kappa" width="990" height="1400" loading="lazy"></span></figure>
+            <figure class="gal-item" style="--r:0.88"><span class="gal-media"><img src="images/affiches-ecole/kappa-mockup.jpg" alt="Affiche du live Twitch Kappa en situation (mockup)" width="1232" height="1400" loading="lazy"></span></figure>
+          </div>
         </div>
       </div>
     </article>

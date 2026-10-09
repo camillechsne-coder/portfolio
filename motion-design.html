@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300..800&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261009a">
+<link rel="stylesheet" href="assets/css/style.css?v=20261009b">
 </head>
 <body data-theme="marine">
 <div class="page-wipe" aria-hidden="true"></div>
@@ -66,10 +66,12 @@
         </dl>
       </div>
       <div class="proj-media">
-        <figure class="loop sq" data-cursor="Son">
-          <video src="videos/motion-projet-1.mp4" poster="images/motion-design/projet-1.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Animation du logo Munch"></video>
-          <span class="loop-tag"><i></i>En boucle · son coupé</span>
-        </figure>
+        <!-- Animations en boucle, sans son : le GIF du logo Munch, puis deux animations de logos côte à côte -->
+        <figure class="anim wide"><img src="images/motion-design/munch.gif" alt="Animation du logo Munch" width="1920" height="1080" loading="lazy"></figure>
+        <div class="anim-row">
+          <figure class="anim sq"><video src="videos/motion-logo-motion-design.mp4" poster="images/motion-design/logo-motion-design.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Animation d’un logo « Motion design »"></video></figure>
+          <figure class="anim sq"><video src="videos/motion-logo-bicycle.mp4" poster="images/motion-design/logo-bicycle.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Animation d’un logo « Bicycle Shop »"></video></figure>
+        </div>
       </div>
     </article>
 
@@ -127,6 +129,6 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
-<script src="assets/js/main.js?v=20261009a"></script>
+<script src="assets/js/main.js?v=20261009b"></script>
 </body>
 </html>

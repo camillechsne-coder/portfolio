@@ -432,6 +432,16 @@ body[data-theme="marine"] .fact .logo-white{opacity:1}
 .proj.boxed .proj-meta div{justify-content:flex-start;align-items:center;gap:.9rem}
 .proj.boxed .proj-meta dd{text-align:left}
 .proj.boxed .proj-tools{justify-content:flex-start}
+/* Variante « side » (vidéos verticales ou carrées : Logo Munch, Interview Brut, Dixneuf) : la carte de texte à gauche de la vidéo */
+@media (min-width:900px){
+  .proj.boxed.side{--side-w:22rem;grid-template-columns:minmax(0,1fr) var(--side-w);align-items:center}
+  .proj.boxed.side:has(.player.tall){--side-w:24rem}
+  .proj.boxed.side:has(.loop.sq){--side-w:30rem}
+  .proj.boxed.side .proj-head{align-self:center;grid-template-columns:minmax(0,1fr)}
+  .proj.boxed.side .proj-text{grid-column:1;grid-row:2;margin-top:1.4rem;max-width:none}
+  .proj.boxed.side .proj-meta{grid-row:3}
+  .proj.boxed.side .proj-media .loop,.proj.boxed.side .proj-media .player{width:100%}
+}
 .proj.boxed .posters{width:min(100%,60rem);margin-inline:auto}
 .proj.boxed .posters:has(> :nth-child(3)){width:100%;grid-template-columns:repeat(3,minmax(0,1fr))}
 .proj.boxed .posters:has(> :nth-child(3)) > :nth-child(even){margin-top:14%}
@@ -463,6 +473,11 @@ body[data-theme="marine"] .fact .logo-white{opacity:1}
 /* barre de temps : lecture/pause, minutage, curseur pour avancer ou reculer */
 .pl-bar{flex:1 1 15rem;min-width:0;display:flex;align-items:center;gap:.7rem;height:2.6rem;padding:0 1rem 0 .3rem;border-radius:999px;
   background:rgba(243,243,253,.9);color:var(--marine);font-size:.82rem;font-weight:600;font-variant-numeric:tabular-nums;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+/* la barre de temps n'apparaît qu'au survol de la vidéo (ou au clavier) ; toujours visible sur écran tactile */
+@media (hover:hover){
+  .pl-bar{opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .35s ease,transform .5s var(--ease),visibility 0s linear .5s}
+  .player:hover .pl-bar,.player:focus-within .pl-bar{opacity:1;visibility:visible;transform:none;transition:opacity .35s ease,transform .5s var(--ease),visibility 0s}
+}
 .player-ui .pl-play{flex:none;width:2rem;height:2rem;padding:0;justify-content:center;background:var(--marine);color:#fff}
 .player-ui .pl-play:hover{background:var(--rose);color:var(--marine);transform:none}
 .pl-pp{position:relative;width:10px;height:11px}

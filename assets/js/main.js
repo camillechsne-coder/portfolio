@@ -43,11 +43,10 @@
     });
   }
 
-  /* ---------- 1. Effets sonores (synthétisés, coupés par défaut) ---------- */
+  /* ---------- 1. Effets sonores (synthétisés, désactivés : plus de bouton son dans le menu) ---------- */
   const Sound = (() => {
     const AC = window.AudioContext || window.webkitAudioContext;
     let ctx = null, master = null, noise = null, on = false, last = 0;
-    try { on = localStorage.getItem('cc-sound') === '1'; } catch (e) {}
     function ensure() {
       if (!AC) return null;
       // le navigateur n'autorise le son qu'après un premier clic ou une touche
@@ -93,14 +92,6 @@
     };
   })();
   const nav = $('.nav');
-  if (nav) {
-    const b = document.createElement('button');
-    b.type = 'button'; b.className = 'sound'; b.dataset.cursor = 'Son';
-    b.setAttribute('aria-label', 'Sons de l\'interface');
-    b.innerHTML = '<span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
-    nav.insertBefore(b, $('.cta', nav));
-    Sound.bind(b);
-  }
   document.addEventListener('pointerover', e => {
     if (e.pointerType !== 'mouse') return;
     const el = e.target.closest('a, button, .skill, [data-lightbox] figure');

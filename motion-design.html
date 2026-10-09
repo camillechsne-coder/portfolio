@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300..800&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261009b">
+<link rel="stylesheet" href="assets/css/style.css?v=20261009e">
 </head>
 <body data-theme="marine">
 <div class="page-wipe" aria-hidden="true"></div>
@@ -51,9 +51,9 @@
   <!-- PROJETS
        Pour ajouter un projet : copiez tout un bloc <article> … </article> et changez le numéro.
        Déposez vos animations dans le dossier videos : motion-projet-1.mp4… Elles tournent en boucle,
-       sans le son (un clic active le son). Formats : class="loop sq" (carré), "loop wide" (paysage), "loop tall" (story). -->
+       sans le son (un clic active le son). Formats : class="loop sq" (carré), "loop wide" (paysage), "loop tall" (story). Vidéo avec barre de temps et plein écran : copiez un bloc <figure class="player wide"> (sans son : class="player wide silent", sans le bouton son). -->
   <section class="projects">
-    <article class="proj stack boxed side" id="projet-1" data-theme="brume">
+    <article class="proj stack boxed" id="projet-1" data-theme="brume">
       <div class="proj-head">
         <div class="proj-id">
           <p class="proj-n">01</p>
@@ -66,8 +66,9 @@
         </dl>
       </div>
       <div class="proj-media">
-        <!-- Animations en boucle, sans son : le GIF du logo Munch, puis deux animations de logos côte à côte -->
+        <!-- Animations en boucle, sans son : le GIF du logo Munch, puis « Autres logos » (deux animations côte à côte) -->
         <figure class="anim wide"><img src="images/motion-design/munch.gif" alt="Animation du logo Munch" width="1920" height="1080" loading="lazy"></figure>
+        <h3 class="anim-title">Autres logos</h3>
         <div class="anim-row">
           <figure class="anim sq"><video src="videos/motion-logo-motion-design.mp4" poster="images/motion-design/logo-motion-design.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Animation d’un logo « Motion design »"></video></figure>
           <figure class="anim sq"><video src="videos/motion-logo-bicycle.mp4" poster="images/motion-design/logo-bicycle.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Animation d’un logo « Bicycle Shop »"></video></figure>
@@ -88,14 +89,17 @@
         </dl>
       </div>
       <div class="proj-media">
-        <figure class="loop wide" data-cursor="Son">
-          <video src="videos/motion-projet-2.mp4" poster="images/motion-design/projet-2.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Vidéo animée pour la Croix-Rouge"></video>
-          <span class="loop-tag"><i></i>En boucle · son coupé</span>
+        <figure class="player wide silent">
+          <video src="videos/motion-projet-2.mp4" poster="images/motion-design/projet-2.jpg" muted loop playsinline preload="none" aria-label="Vidéo animée pour la Croix-Rouge"></video>
+          <div class="player-ui">
+            <div class="pl-bar"><button class="pl-play" type="button" aria-label="Mettre en pause"><span class="pl-pp" aria-hidden="true"></span></button><span class="pl-time">0:00</span><input class="pl-seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Avancer ou reculer dans la vidéo"><span class="pl-dur">0:00</span></div>
+            <button class="pl-full" type="button" aria-label="Voir en plein écran"><span aria-hidden="true">⤢</span></button>
+          </div>
         </figure>
       </div>
     </article>
 
-    <article class="proj stack boxed side" id="projet-3" data-theme="brume">
+    <article class="proj stack boxed" id="projet-3" data-theme="brume">
       <div class="proj-head">
         <div class="proj-id">
           <p class="proj-n">03</p>
@@ -108,9 +112,13 @@
         </dl>
       </div>
       <div class="proj-media">
-        <figure class="loop tall" data-cursor="Son">
-          <video src="videos/motion-projet-3.mp4" poster="images/motion-design/projet-3.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Animation de texte sur une interview de Brut"></video>
-          <span class="loop-tag"><i></i>En boucle · son coupé</span>
+        <figure class="player wide">
+          <video src="videos/motion-projet-3.mp4" poster="images/motion-design/projet-3.jpg" muted loop playsinline preload="none" aria-label="Animation de texte sur une interview de Brut"></video>
+          <div class="player-ui">
+            <div class="pl-bar"><button class="pl-play" type="button" aria-label="Mettre en pause"><span class="pl-pp" aria-hidden="true"></span></button><span class="pl-time">0:00</span><input class="pl-seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Avancer ou reculer dans la vidéo"><span class="pl-dur">0:00</span></div>
+            <button class="pl-sound" type="button" aria-pressed="false"><span class="pl-ico" aria-hidden="true"></span><span class="pl-txt">Activer le son</span></button>
+            <button class="pl-full" type="button" aria-label="Voir en plein écran"><span aria-hidden="true">⤢</span></button>
+          </div>
         </figure>
       </div>
     </article>
@@ -129,6 +137,6 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
-<script src="assets/js/main.js?v=20261009b"></script>
+<script src="assets/js/main.js?v=20261009e"></script>
 </body>
 </html>

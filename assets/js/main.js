@@ -808,9 +808,10 @@ void main(){
   }), { threshold: .6 });
   players.forEach(p => {
     const v = $('video', p), snd = $('.pl-sound', p), full = $('.pl-full', p);
-    if (!snd) return;
+    if (!full) return;
     v.addEventListener('error', () => p.classList.add('missing'), true);
     const syncSound = () => {
+      if (!snd) return;   // vidéo sans son : pas de bouton son
       snd.setAttribute('aria-pressed', !v.muted);
       $('.pl-txt', snd).textContent = v.muted ? 'Activer le son' : 'Couper le son';
       p.classList.toggle('sound-on', !v.muted);
@@ -821,8 +822,12 @@ void main(){
       syncSound();
       const pr = v.play(); if (pr) pr.catch(() => {});
     };
-    snd.addEventListener('click', e => { e.stopPropagation(); toggleSound(); });
-    v.addEventListener('click', toggleSound);   // un clic sur la vidéo active ou coupe le son
+    if (snd) {
+      snd.addEventListener('click', e => { e.stopPropagation(); toggleSound(); });
+      v.addEventListener('click', toggleSound);   // un clic sur la vidéo active ou coupe le son
+    } else {
+      v.addEventListener('click', () => { if (v.paused) { const pr = v.play(); if (pr) pr.catch(() => {}); } else v.pause(); });   // sans son : un clic met en pause ou relance
+    }
     v.addEventListener('volumechange', syncSound);
     full.addEventListener('click', e => {
       e.stopPropagation();
@@ -872,7 +877,7 @@ void main(){
     playerIO.observe(p);
   });
   // motion design : un clic active ou coupe le son de l'animation
-  $$('.loop').forEach(l => {
+  $$('.loop:not(.silent)').forEach(l => {
     const v = $('video', l), tag = $('.loop-tag', l);
     l.addEventListener('click', () => {
       v.muted = !v.muted;
